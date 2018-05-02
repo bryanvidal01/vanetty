@@ -3,7 +3,7 @@ var sass = require('gulp-sass');
 const bs = require("browser-sync").create();
 
 gulp.task('sass', function () {
-    gulp.src('wp-content/themes/vanetty/assets/scss/main.scss')
+    gulp.src('wp-content/themes/vanetty/assets/scss/*')
         .pipe(sass({includePaths: ['scss']}))
         .pipe(gulp.dest('wp-content/themes/vanetty/assets/css'));
 });
