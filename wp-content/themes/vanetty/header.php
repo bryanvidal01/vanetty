@@ -7,19 +7,59 @@
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/main.css">
     <script src="<?php echo get_template_directory_uri(); ?>/assets/js/libs/jQuery.js" charset="utf-8"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/assets/js/libs/jquery-ui.min.js" charset="utf-8"></script>
+
+    <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/assets/js/libs/gsap/TweenLite.min.js'></script>
+    <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/assets/js/libs/gsap/TweenMax.min.js'></script>
+    <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/assets/js/libs/gsap/TimelineLite.min.js'></script>
+    <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/assets/js/libs/gsap/TimelineMax.min.js'></script>
+    <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/assets/js/libs/gsap/scrollmagic.js'></script>
+    <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/assets/js/libs/gsap/easing/EasePack.min.js'></script>
+    <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/assets/js/libs/gsap/plugins/ScrollToPlugin.min.js'></script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/2.0.5/wavesurfer.min.js"></script>
+
     <script src="<?php echo get_template_directory_uri(); ?>/assets/js/functions.js" charset="utf-8"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/assets/js/events.js" charset="utf-8"></script>
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
+
       <div class="barre"></div>
       <div class="barre"></div>
       <div class="barre"></div>
       <div class="barre"></div>
 
+      <div class="container-menu hidde" style="background-image: url('<?php echo get_template_directory_uri() ?>/assets/images/galerie-2.jpg');">
+          <ul class="menu">
+              <li>
+                  <a href="#">
+                      Homepage
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      Galerie
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      Dates
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      Mixes
+                  </a>
+              </li>
+              <li>
+                  <a href="#">
+                      Contact
+                  </a>
+              </li>
+          </ul>
+      </div>
 
       <div class="header">
-
           <a href="#" class="menu">
               Menu
           </a>

@@ -1,0 +1,107 @@
+.page-template-single-actu{
+    .logo{
+        display: none;
+    }
+}
+
+.popin-news{
+    .image-news{
+        height: 50vh;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        padding-top: 170px;
+
+        &:after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            bottom: 0;
+            pointer-events: none;
+            background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(#111,1) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, rgba(#111,0) 0%,rgba(#111,1) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(#111,0) 0%,rgba(#111,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+        }
+
+        &:before{
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: rgba(#000, .5);
+            left: 0;
+            top: 0;
+            position: absolute;
+        }
+    }
+
+    .title-news{
+        font-size: 45px;
+        color: #FFF;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: .1em;
+        position: relative;
+        z-index: 300;
+    }
+
+    .date{
+        margin-top: 0px;
+        text-align: center;
+        letter-spacing: .05em;
+        color: #FFF;
+        font-size: 16px;
+        position: relative;
+        z-index: 100;
+        opacity: .9;
+
+        font-family: 'futura-pt';
+    }
+
+    .close-news{
+        position: absolute;
+        left: 50%;
+        top: 30px;
+        border: 1px solid #FFF;
+        z-index: 300;
+        @include translate(-50%, 0%);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+
+        &:before{
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 15px;
+            height: 15px;
+            @include translate(-50%, -50%);
+            background: url('../icons/cross.svg');
+            background-size: cover;
+        }
+    }
+}
+
+.container-single-news{
+    .intro{
+        color: #FFF;
+        font-size: 19px;
+        line-height: 27px;
+        letter-spacing: .05em;
+        margin-bottom: 30px;
+        font-family: "butler_stencilultralight";
+    }
+
+    p{
+        font-family: 'futura-pt';
+        color: #FFF;
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    img{
+        max-width: 100%;
+    }
+}

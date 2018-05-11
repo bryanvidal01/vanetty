@@ -8,6 +8,12 @@
     background-size: cover;
     overflow: hidden;
 
+    &.is-play{
+        video{
+            opacity: 1;
+        }
+    }
+
     video{
         position: fixed;
         left: 0;
@@ -15,8 +21,34 @@
         width: 100%;
         height: 100%;
         opacity: .1;
-
+        @include transition(.4s);
         @include scale(1.1);
+    }
+
+}
+
+
+.close-popin{
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    z-index: 300;
+    color: #FFF;
+    font-family: 'futura-pt';
+    font-size: 15px;
+    padding-left: 25px;
+    display: none;
+    cursor: pointer;
+
+    &:before{
+        content: '';
+        width: 20px;
+        height: 20px;
+        background: url('../icons/cross.svg');
+        background-size: cover;
+        position: absolute;
+        left: 0;
+        top: 0;
     }
 }
 
@@ -30,20 +62,63 @@
 }
 
 .link-video{
-    left: auto;
-    right: 30px;
+    left: 50%;
+    @include translate(-50%, 0);
     text-transform: uppercase;
     font-weight: 600;
     cursor: pointer;
+    @include transition(.8s);
+    cursor: pointer;
+
+    .info-button{
+        position: absolute;
+        top: -15px;
+        text-align: center;
+        font-size: 10px;
+        width: 120px;
+        left: 50%;
+        @include translate(-50%, 0);
+    }
+
+    &.is-open{
+        opacity: 0;
+        @include translate(-50%, 30px);
+    }
+
+    .container-svg{
+        @include rotate(-90deg);
+    }
+    .circle-1, .circle-2{
+        width: 30px;
+        height: 30px;
+        fill: transparent;
+    }
+    .circle-2{
+        stroke-dasharray: 190;
+        stroke-dashoffset: 190;
+        @include transition(2s);
+    }
+
+    &.is-click{
+        .circle-2{
+            stroke-dashoffset: 0;
+        }
+    }
+
+
     &:before{
         content: '';
-        width: 15px;
-        height: 15px;
+        width: 20px;
+        height: 20px;
         background: url('../icons/play.svg');
         background-size: cover;
         position: absolute;
-        top: 1px;
-        left: -23px;
+        left: 50%;
+        top: 50%;
+        margin-left: -1px;
+        margin-top: 0px;
+        @include translate(-50%, -50%);
+        z-index: 30;
     }
 }
 
@@ -65,11 +140,13 @@
             left: 30%;
             min-width: 170px;
             top: 20%;
-            @include transition(.2s);
+
+            @include translate3d(0, 0, 1px);
+
+
 
             &:hover, &:focus{
                 color: #FFF;
-
                 cursor: move;
             }
 
@@ -78,6 +155,7 @@
                 -webkit-filter: blur(.5rem);
                 -moz-filter: blur(.5rem);
                 -o-filter: blur(.5rem);
+                @include transition(.6s);
             }
 
 

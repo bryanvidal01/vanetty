@@ -1,6 +1,6 @@
 .header{
     position: absolute;
-    z-index: 200;
+    z-index: 400;
     width: 100%;
 
     .logo{
@@ -12,12 +12,19 @@
         text-transform: uppercase;
         @include translate(-50%, 0);
         letter-spacing: .1em;
+        @include transition(.4s);
+
+        &.hidde{
+            @include translate(-50%, -30px);
+            opacity: 0;
+        }
     }
     .social{
         position: absolute;
         right: 30px;
         top: 30px;
         z-index: 300;
+        @include transition(.4s);
 
         li{
             display: inline-block;
@@ -26,7 +33,13 @@
             svg{
                 width: 17px;
                 height: 14px;
+                fill: #FFF;
             }
+        }
+
+        &.hidde{
+            @include translate(0, -30px);
+            opacity: 0;
         }
     }
 
@@ -49,5 +62,82 @@
             top: -4px;
             background-size: cover;
         }
+
+        &:hover, &:focus{
+            color: #FFF;
+        }
+    }
+}
+
+.container-menu{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: 305;
+    @include transition(.4s);
+
+
+    &.hidde{
+        height: 0%;
+        overflow: hidden;
+        transition-delay: .3s;
+
+        .menu{
+            opacity: 0;
+            transition-delay: 0s;
+        }
+    }
+
+    &:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        background: rgba(#000, .7);
+    }
+
+    .menu{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @include translate(-50%, -50%);
+        width: 80%;
+        z-index: 3;
+        text-align: center;
+        opacity: 1;
+        @include transition(.3s);
+        transition-delay: .4s;
+
+        li{
+            margin: 10px 0;
+            a{
+                font-size: 30px;
+                letter-spacing: .05em;
+                color: #FFF;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+
+.container-loader{
+    background: #000;
+    position: fixed;
+    height: 100vh;
+    z-index: 600;
+    width: 100%;
+
+    img{
+        width: 500px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @include translate(-50%, -50%);
     }
 }
