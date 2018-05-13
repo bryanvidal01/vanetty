@@ -88,6 +88,8 @@ jQuery(document).ready(function(){
     };
 
 
+    lanceVideoGalerie();
+
     function parallaxIt(e, target, movement){
       var $this = jQuery('.container-points');
       var relX = e.pageX - Math.round(Math.random() * 10);

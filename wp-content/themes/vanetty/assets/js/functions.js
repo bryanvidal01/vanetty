@@ -105,3 +105,21 @@ function smoothScroll() {
     	});
     });
 }
+
+
+function lanceVideoGalerie() {
+    jQuery('.image.is-video').click(function(){
+        var el = jQuery(this);
+        var url = el.data('video-url');
+        var popin = jQuery('.video-galerie');
+
+        popin.append("<iframe width='854' height='480' src='https://www.youtube.com/embed/vwWWGhvnRnM?autoplay=1' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+        popin.removeClass('hidden');
+    });
+
+    jQuery('.video-galerie .close-news').click(function(){
+        event.preventDefault();
+        jQuery('.video-galerie').addClass('hidden');
+        jQuery('.video-galerie iframe').remove();
+    });
+}

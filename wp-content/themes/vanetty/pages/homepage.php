@@ -6,145 +6,57 @@ Template Name: Homepage
 get_header();
 ?>
 
-<div class="image-intro">
-    <div class="close-popin">
-        Retour à la home
+
+<?php if(get_field('video_teaser')): ?>
+    <div class="image-intro">
+        <div class="close-popin">
+            Retour à la home
+        </div>
+        <video id="video-bg" src="<?php echo get_field('video_teaser'); ?>" autoplay muted loop></video>
     </div>
-    <video id="video-bg" src="<?php echo get_template_directory_uri() ?>/assets/images/video-bg.mp4" autoplay muted></video>
-</div>
+<?php endif; ?>
 
 
+<?php
 
-<div class="container-points">
-    <ul class="list-point">
-        <li>
-            <a href="#" class="point" data-gravity="55">
-                <div class="point__button">
-                    <div class="icon">
-                        ”
-                    </div>
-                </div>
-                <div class="point__content">
-                    <div class="title">
-                        Festival de cannes
-                    </div>
-                    <div class="date">
-                        22/07/2018
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="point" data-gravity="30">
-                <div class="point__button">
-                    <div class="icon">
-                        ”
-                    </div>
-                </div>
-                <div class="point__content">
-                    <div class="title">
-                        Festival de cannes
-                    </div>
-                    <div class="date">
-                        22/07/2018
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="point" data-gravity="30">
-                <div class="point__button">
-                    <div class="icon">
-                        ”
-                    </div>
-                </div>
-                <div class="point__content">
-                    <div class="title">
-                        Festival de cannes
-                    </div>
-                    <div class="date">
-                        22/07/2018
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="point" data-gravity="30">
-                <div class="point__button">
-                    <div class="icon">
-                        ”
-                    </div>
-                </div>
-                <div class="point__content">
-                    <div class="title">
-                        Festival de cannes
-                    </div>
-                    <div class="date">
-                        22/07/2018
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="point" data-gravity="30">
-                <div class="point__button">
-                    <div class="icon">
-                        ”
-                    </div>
-                </div>
-                <div class="point__content">
-                    <div class="title">
-                        Festival de cannes
-                    </div>
-                    <div class="date">
-                        22/07/2018
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="point" data-gravity="55">
-                <div class="point__button">
-                    <div class="icon">
-                        ”
-                    </div>
-                </div>
-                <div class="point__content">
-                    <div class="title">
-                        Festival de cannes
-                    </div>
-                    <div class="date">
-                        22/07/2018
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="point" data-gravity="55">
-                <div class="point__button">
-                    <div class="icon">
-                        ”
-                    </div>
-                </div>
-                <div class="point__content">
-                    <div class="title">
-                        Festival de cannes
-                    </div>
-                    <div class="date">
-                        22/07/2018
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="point" data-gravity="55">
-                <div class="point__button">
-                    <div class="icon">
-                        ”
-                    </div>
-                </div>
-                <div class="point__content">
-                    <div class="title">
-                        Festival de cannes
-                    </div>
-                    <div class="date">
-                        22/07/2018
-                    </div>
-                </div>
-            </a>
-        </li>
-    </ul>
-</div>
+$posts = get_field('articles');
+$gravity = [55, 25, 30, 50, 30, 40, 60, 80, 50, 80];
 
-<div class="actu-star">
-    Nouveau  son «Welcom to my world» disponible sur spotify
-</div>
+if( $posts ): ?>
+    <div class="container-points">
+        <ul class="list-point">
+            <li>
+            <?php foreach( $posts as $key => $post): ?>
+                <?php setup_postdata($post); ?>
+                <a href="<?php echo get_the_permalink(); ?>" class="point" data-gravity="<?php echo $gravity[$key]; ?>">
+                    <div class="point__button">
+                        <div class="icon">
+                            ”
+                        </div>
+                    </div>
+                    <div class="point__content">
+                        <div class="title">
+                            <?php echo get_the_title(); ?>
+                        </div>
+                        <div class="date">
+                            <?php echo get_the_date('j/m/Y') ?>
+                        </div>
+                    </div>
+                </a>
+            <?php endforeach; ?>
+            </li>
+        </ul>
+    <?php wp_reset_postdata(); ?>
+    </div>
+<?php endif; ?>
+
+
+<?php if(get_field('news_star')): ?>
+    <div class="actu-star">
+        <?php echo get_field('news_star'); ?>
+    </div>
+<?php endif; ?>
+
 
 <div class="link-video">
     <div class="container-svg">

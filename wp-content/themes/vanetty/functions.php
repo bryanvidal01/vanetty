@@ -1,21 +1,9 @@
 <?php
 
-
-function bbx_theme_setup() {
-	if ( ! isset( $content_width ) ) $content_width = 1200;
-	add_theme_support( 'automatic-feed-links' );
-	add_theme_support( 'menus' );
-	add_theme_support( 'post-thumbnails' );
-	add_filter( 'show_admin_bar', '__return_false' );
-}
-add_action( 'after_setup_theme', 'bbx_theme_setup' );
-
-
-function bbx_enqueue_scripts() {
-	$js_directory = get_template_directory_uri() . '/javascript/';
-	wp_register_script( 'global', $js_directory . 'global.js', 'jquery', '1.0' );
-	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'global' );
-}
-add_action( 'wp_enqueue_scripts', 'bbx_enqueue_scripts' );
-
+// Image size
+add_image_size( '1500x1500', 1500, 1500, true );
+add_image_size( '1300x900', 1300, 900, true );
+add_image_size( '700x850', 700, 850, true );
+add_image_size( '700x900', 700, 900, true );
+add_image_size( '600x800', 600, 800, true );
+add_image_size( '2000x800', 2000, 800, true );

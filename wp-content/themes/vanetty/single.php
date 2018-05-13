@@ -1,22 +1,45 @@
-<?php get_header(); ?>
-<div class="site-main">
-  <?php if (have_posts()) : ?>
-    <?php while (have_posts()) : the_post(); ?>
-      <div <?php post_class(); ?>>
-        <h1 class="post-title"><?php the_title(); ?></h1>
-        <p class="post-info">
-          Posté le <?php the_date(); ?> dans <?php the_category(', '); ?> par <?php the_author(); ?>.
-        </p>
-        <div class="post-content">
-          <?php the_content(); ?>
+<?php
+
+get_header();
+the_post();
+$imageID = get_field('thumbnail');
+$imageURL = wp_get_attachment_image_src($imageID, '1000x1000');
+$textIntro = get_field('texte_intro');
+$textContent = get_field('texte_content');
+?>
+
+
+<div class="popin-news">
+    <a href="<?php echo get_site_url(); ?>" class="close-news"></a>
+
+    <div class="image-news" style="background-image: url('<?php echo $imageURL[0] ?>')">
+        <div class="title-news">
+            <?php echo get_the_title(); ?>
         </div>
-        <?php the_tags('<p class="post-tags">Tags : ', ', ', '</p>'); ?>
-        <div class="post-comments">
-          <?php comments_template(); ?>
+        <div class="date">
+            <?php echo get_the_date('j/m/Y') ?>
         </div>
-      </div>
-    <?php endwhile; ?>
-  <?php endif; ?>
+    </div>
 </div>
-<?php get_sidebar(); ?>
+
+<div class="container container-single-news">
+    <div class="row">
+        <?php if ($textIntro): ?>
+            <div class="col-sm-8 col-sm-offset-2">
+                <div class="intro">
+                    <?php echo $textIntro ?>
+                </div>
+            </div>
+        <?php endif; ?>
+        <?php if ($textContent): ?>
+            <div class="col-sm-8 col-sm-offset-2">
+                <?php echo $textContent; ?>
+            </div>
+        <?php endif; ?>
+    </div>
+</div>
+
+<canvas id="noise" class="noise"></canvas>
+
+
 <?php get_footer(); ?>

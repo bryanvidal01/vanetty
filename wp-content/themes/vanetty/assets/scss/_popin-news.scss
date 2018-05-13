@@ -1,4 +1,4 @@
-.page-template-single-actu{
+.single-post{
     .logo{
         display: none;
     }
@@ -86,12 +86,15 @@
 
 .container-single-news{
     .intro{
-        color: #FFF;
-        font-size: 19px;
-        line-height: 27px;
-        letter-spacing: .05em;
-        margin-bottom: 30px;
-        font-family: "butler_stencilultralight";
+
+        p{
+            color: #FFF;
+            font-size: 19px;
+            line-height: 27px;
+            letter-spacing: .05em;
+            margin-bottom: 30px;
+            font-family: "butler_stencilultralight";
+        }
     }
 
     p{
