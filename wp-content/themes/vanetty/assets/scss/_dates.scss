@@ -1,0 +1,21 @@
+.page-template-dates{
+    background: #000;
+    .logo{
+        display: none;
+    }
+
+    .list-dates{
+        text-align: center;
+        font-family: 'futura-pt';
+        color: #FFF;
+
+        li{
+            font-size: 22px;
+            font-weight: 600;
+            margin: 10px 0;
+            .date{
+                font-weight: 100;
+            }
+        }
+    }
+}

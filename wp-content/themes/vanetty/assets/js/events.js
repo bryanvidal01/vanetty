@@ -87,7 +87,6 @@ jQuery(document).ready(function(){
         })();
     };
 
-
     lanceVideoGalerie();
 
     function parallaxIt(e, target, movement){
@@ -123,7 +122,6 @@ jQuery(document).ready(function(){
 
     smoothScroll();
 
-    dragAudio();
 
 });
 
@@ -203,4 +201,18 @@ jQuery(window).on('load', function(){
         }
     });
 
+
+    setTimeout(function(){
+        removeLoader();
+    }, 4000);
+
+
+    jQuery('.menu-principal-container a, .container-points a, .list-pochettes a').click(function(){
+        setLoader();
+    });
+
+});
+
+jQuery(window).ready(function(){
+    removeLoader();
 });

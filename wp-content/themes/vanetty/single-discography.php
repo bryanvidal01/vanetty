@@ -4,12 +4,16 @@ Template Name: Single Audio
 */
 
 get_header();
+the_post();
+
+$pochetteID = get_field('pochette');
+
 ?>
 
-<div class="header-image header-single-sound" style="background-image: url('http://img.over-blog-kiwi.com/0/54/92/27/20140820/ob_fe4d19_born-to-die-album-pochette.jpg');">
+<div class="header-image header-single-sound" style="background-image: url('<?php echo wp_get_attachment_image_src($pochetteID, '2000x800' )[0] ?>');">
 
     <div class="header-image__text">
-        Face to face
+        <?php echo get_the_title(); ?>
 
         <ul class="social">
               <li>
@@ -42,58 +46,30 @@ get_header();
 
 </div>
 
+
+
 <div class="container-discrography-single text-center">
     <ul class="list-sound text-left">
-        <li>
-            <a href="http://localhost:8888/vanetty/wp-content/uploads/2018/05/Steve-Angello-Break-Me-Down-Official-Audio.mp3">
-                <span class="title">
-                    Face To Face
-                </span>
-                <span class="author">
-                    Vanetty ft. Michael Canitrot
-                </span>
-            </a>
-        </li>
-        <li>
-            <a href="http://localhost:8888/vanetty/wp-content/uploads/2018/05/El-Profesor-Bella-Ciao-HUGEL-Remix.mp3">
-                <span class="title">
-                    Chain reaction
-                </span>
-                <span class="author">
-                    Vanetty
-                </span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <span class="title">
-                    Come With Me
-                </span>
-                <span class="author">
-                    Vanetty ft. Michael Canitrot
-                </span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <span class="title">
-                    Come With Me
-                </span>
-                <span class="author">
-                    Vanetty ft. David Guetta
-                </span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <span class="title">
-                    Appear in
-                </span>
-                <span class="author">
-                    Vanetty ft. David Guetta
-                </span>
-            </a>
-        </li>
+
+        <?php
+
+        if( have_rows('list_song') ):
+            while ( have_rows('list_song') ) : the_row();
+            ?>
+                <li>
+                    <a href="<?php echo get_sub_field('upload'); ?>">
+                        <span class="title">
+                            <?php echo the_sub_field('title'); ?>
+                        </span>
+                        <span class="author">
+                            <?php echo the_sub_field('auteur'); ?>
+                        </span>
+                    </a>
+                </li>
+
+            <?php endwhile;
+        endif;
+        ?>
     </ul>
 </div>
 

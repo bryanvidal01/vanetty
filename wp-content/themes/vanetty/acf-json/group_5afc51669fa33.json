@@ -28,6 +28,33 @@
             "min": "",
             "max": "",
             "return_format": "id"
+        },
+        {
+            "key": "field_5b117e7139b59",
+            "label": "Liste mixe",
+            "name": "list_mix",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "discography"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "id"
         }
     ],
     "location": [
@@ -47,5 +74,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1526485432
+    "modified": 1527873264
 }

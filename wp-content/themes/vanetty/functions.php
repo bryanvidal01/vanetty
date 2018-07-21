@@ -1,5 +1,14 @@
 <?php
 
+function theme_setup() {
+	if ( ! isset( $content_width ) ) $content_width = 1200;
+	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'menus' );
+	add_theme_support( 'post-thumbnails' );
+	add_filter( 'show_admin_bar', '__return_false' );
+}
+add_action( 'after_setup_theme', 'theme_setup' );
+
 // Image size
 add_image_size( '1500x1500', 1500, 1500, true );
 add_image_size( '1300x900', 1300, 900, true );
@@ -19,6 +28,7 @@ function create_post_type() {
       ),
       'public' => true,
 	  'menu_icon' => 'dashicons-format-status',
+
     )
   );
 }

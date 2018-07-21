@@ -9,16 +9,19 @@ function pointRand() {
     jQuery('.list-point .point').mouseleave(function(){
         jQuery('.list-point .point').removeClass('is-hover');
     });
-
-    $( ".list-point .point" ).draggable({
-        containment: ".container-points"
-    });
 }
 
 
+function removeLoader(){
+    jQuery('.container-loader').fadeOut();
+}
+
+function setLoader(){
+    jQuery('.container-loader').fadeIn();
+}
+
 
 function playButton() {
-
     var playClick;
 
     function startPlay() {
@@ -74,11 +77,15 @@ function playButton() {
 
 
 function triggerMenu() {
-    jQuery('.menu').click(function(){
+    jQuery('a.menu').click(function(){
         event.preventDefault();
 
         jQuery('.container-menu').toggleClass('hidde');
     });
+}
+
+function loader() {
+
 }
 
 
@@ -92,7 +99,7 @@ function smoothScroll() {
 
     		event.preventDefault();
 
-    		var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
+    		var delta = event.originalEvent.wheelDelta / 120 || -event.originalEvent.detail/3;
     		var scrollTop = $window.scrollTop();
     		var finalScroll = scrollTop - parseInt(delta*scrollDistance);
 
