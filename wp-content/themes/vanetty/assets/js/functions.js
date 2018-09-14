@@ -27,6 +27,8 @@ function playButton() {
     function startPlay() {
         playClick = setTimeout(function(){
             var video = document.getElementById('video-bg');
+
+
             jQuery('.container-points').fadeOut(600);
             jQuery('.link-video').addClass('is-open');
             jQuery('.link-video').addClass('is-open');
@@ -40,7 +42,6 @@ function playButton() {
                 jQuery('.close-popin').fadeIn(300);
             }, 300);
             jQuery('.menu').fadeOut();
-            video.currentTime = 0;
         }, 1700);
     }
 
@@ -77,9 +78,8 @@ function playButton() {
 
 
 function triggerMenu() {
-    jQuery('a.menu').click(function(){
+    jQuery('a.menu').click(function(event){
         event.preventDefault();
-
         jQuery('.container-menu').toggleClass('hidde');
     });
 }

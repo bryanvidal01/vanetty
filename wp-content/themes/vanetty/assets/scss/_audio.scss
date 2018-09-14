@@ -227,13 +227,14 @@ body.single-discography{
 
 
     .social{
+        margin-top: 10px;
         li{
             display: inline-block;
             margin: 0 5px;
             svg{
                 fill: #FFF;
-                width: 20px;
-                height: 16px;
+                max-width: 30px;
+                max-height: 30px;
             }
         }
     }

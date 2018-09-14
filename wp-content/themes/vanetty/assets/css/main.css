@@ -5910,7 +5910,7 @@ a {
     position: absolute;
     left: 50%;
     top: 30px;
-    font-size: 30px;
+    font-size: 38px;
     color: #FFF;
     text-transform: uppercase;
     -webkit-transform: translate(-50%, 0);
@@ -5956,7 +5956,7 @@ a {
     padding-left: 35px;
     position: relative;
     font-family: 'futura-pt';
-    font-size: 17px; }
+    font-size: 18px; }
     .header .menu:before {
       content: '';
       width: 30px;
@@ -6187,7 +6187,7 @@ a {
   bottom: 30px;
   color: #FFF;
   font-family: 'futura-pt';
-  font-size: 12px; }
+  font-size: 16px; }
   .actu-star a, .link-video a {
     font-weight: 600; }
 
@@ -6208,8 +6208,8 @@ a {
     position: absolute;
     top: -15px;
     text-align: center;
-    font-size: 10px;
-    width: 120px;
+    font-size: 13px;
+    width: 160px;
     left: 50%;
     -webkit-transform: translate(-50%, 0);
     -ms-transform: translate(-50%, 0);
@@ -6308,11 +6308,11 @@ a {
           font-family: 'futura-pt';
           text-transform: uppercase;
           font-weight: 500;
-          font-size: 12px;
+          font-size: 13px;
           cursor: pointer; }
         .container-points .list-point .point__content .date {
           font-family: 'futura-pt';
-          font-size: 10px;
+          font-size: 11px;
           font-weight: 300;
           opacity: .7; }
       .container-points .list-point .point:nth-child(1) {
@@ -6655,13 +6655,15 @@ body.single-discography {
     /* IE6-9 */ }
   .header-single-sound .header-image__text {
     margin-top: -30px; }
-  .header-single-sound .social li {
-    display: inline-block;
-    margin: 0 5px; }
-    .header-single-sound .social li svg {
-      fill: #FFF;
-      width: 20px;
-      height: 16px; }
+  .header-single-sound .social {
+    margin-top: 10px; }
+    .header-single-sound .social li {
+      display: inline-block;
+      margin: 0 5px; }
+      .header-single-sound .social li svg {
+        fill: #FFF;
+        max-width: 30px;
+        max-height: 30px; }
   .header-single-sound .play-pause {
     position: absolute;
     left: 30px;
@@ -6721,11 +6723,12 @@ body.single-discography {
   display: none; }
 
 .popin-news .image-news {
-  height: 50vh;
+  height: auto;
   background-size: cover;
   background-position: center;
   position: relative;
-  padding-top: 170px; }
+  padding-top: 170px;
+  padding-bottom: 80px; }
   .popin-news .image-news:after {
     content: '';
     position: absolute;
@@ -6828,3 +6831,62 @@ body.single-discography {
       margin: 10px 0; }
       .page-template-dates .list-dates li .date {
         font-weight: 100; }
+      .page-template-dates .list-dates li.is-archive {
+        opacity: .4; }
+
+@media (max-width: 576px) {
+  #video-bg {
+    display: none; }
+  .header .logo {
+    top: 120px;
+    font-size: 30px; }
+  .header .social {
+    top: 40px; }
+  .container-points .list-point .point {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    top: auto !important; }
+    .container-points .list-point .point:before, .container-points .list-point .point:after {
+      content: " ";
+      display: table; }
+    .container-points .list-point .point:after {
+      clear: both; }
+  .link-video {
+    display: none; }
+  .container-points .list-point {
+    height: auto;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%); }
+  .popin-news .title-news {
+    font-size: 24px;
+    padding: 0 15px; }
+  .container-discrography .list-pochettes li {
+    width: 100%;
+    margin-bottom: 15px; }
+  body.single-discography .header-image__text {
+    font-size: 25px; }
+  .header-single-sound .header-image__text {
+    margin-top: 0; }
+  .header-single-sound {
+    height: 100vh !important; }
+  .header-single-sound #waveform,
+  .header-single-sound .play-pause,
+  .container-discrography-single {
+    display: none; }
+  .container-discrography .list-pochettes .text-pochette {
+    font-size: 20px; }
+  .header-image {
+    height: 250px; }
+  .container-discrography {
+    margin-top: -50px;
+    padding: 0 15px; }
+  .header-image__text {
+    font-size: 30px; } }

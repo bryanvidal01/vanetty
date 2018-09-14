@@ -6,11 +6,12 @@
 
 .popin-news{
     .image-news{
-        height: 50vh;
+        height: auto;
         background-size: cover;
         background-position: center;
         position: relative;
         padding-top: 170px;
+        padding-bottom: 80px;
 
         &:after{
             content: '';

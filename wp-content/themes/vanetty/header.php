@@ -13,6 +13,7 @@
     <script src="<?php echo get_template_directory_uri(); ?>/assets/js/libs/jQuery.js" charset="utf-8"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/assets/js/libs/jquery-ui.min.js" charset="utf-8"></script>
     <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/images/icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/assets/js/libs/gsap/TweenLite.min.js'></script>
     <script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/assets/js/libs/gsap/TweenMax.min.js'></script>
